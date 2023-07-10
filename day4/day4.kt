@@ -8,6 +8,8 @@ fun main(args: Array<String>) {
         return
     }
 
+    /* Part 1 */
+    
     val secretKey: String = args[0]
     var number = 1
 
@@ -16,7 +18,7 @@ fun main(args: Array<String>) {
         val inputString = secretKey + number.toString()
         val MD5Hash = calculateMD5(inputString)
         
-        if(has_LeadingZeros(MD5Hash,5)) {
+        if(hasLeadingZeros(MD5Hash,5)) {
             break
         }
         
@@ -25,12 +27,14 @@ fun main(args: Array<String>) {
 
     println("The lowest positive number (appended to the secret key) to produce a MD5 hash with at least 5 leading zeros is $number.")   /* ckczppom117946 */
 
+    /* Part 2 */
+    
     while(true) {
         
         val inputString = secretKey + number.toString()
         val MD5Hash = calculateMD5(inputString)
         
-        if(has_LeadingZeros(MD5Hash,6)) {
+        if(hasLeadingZeros(MD5Hash,6)) {
             break
         }
         
@@ -39,6 +43,9 @@ fun main(args: Array<String>) {
 
     println("The lowest positive number (appended to the secret key) to produce a MD5 hash with at least 6 leading zeros is $number.")   /* ckczppom3938038 */
 }
+
+/* calculateMD5() returns the 
+   MD5 hash of the index string */
 
 fun calculateMD5(input: String): String {
     
@@ -54,7 +61,10 @@ fun calculateMD5(input: String): String {
     return hashText
 }
 
-fun has_LeadingZeros(input: String, index: Int): Boolean {
+/* hasLeadingZeros() returns if the input string 
+   has the inputted number of leading zeros */
+
+fun hasLeadingZeros(input: String, index: Int): Boolean {
     
     val first5 = input.substring(0,index)
 
