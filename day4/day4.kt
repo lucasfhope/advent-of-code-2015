@@ -9,10 +9,13 @@ fun main(args: Array<String>) {
     }
 
     /* Part 1 */
+
+    /* loops until the secret key appended to a 
+       number has an MD5 Hash with 5 leading zeros */
     
     val secretKey: String = args[0]
     var number = 1
-
+    
     while(true) {
         
         val inputString = secretKey + number.toString()
@@ -28,6 +31,9 @@ fun main(args: Array<String>) {
     println("The lowest positive number (appended to the secret key) to produce a MD5 hash with at least 5 leading zeros is $number.")   /* ckczppom117946 */
 
     /* Part 2 */
+
+    /* loops until the secret key appended to a 
+       number has an MD5 Hash with 5 leading zeros */
     
     while(true) {
         
