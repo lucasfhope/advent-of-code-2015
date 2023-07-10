@@ -11,6 +11,9 @@ fun main() {
 
     var coordinates_visited = mutableListOf(coordinates)
 
+    /* move santa with each instruction and 
+       count the number of new houses visited */
+    
     instructions.forEach() {
        
         when(it) {
