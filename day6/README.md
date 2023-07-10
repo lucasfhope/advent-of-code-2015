@@ -41,4 +41,4 @@ Your puzzle answer was `17836115`.
 
 ---
 
-[You can get the puzzle input here](input.txt).
+You can [get the puzzle input here](input.txt).
