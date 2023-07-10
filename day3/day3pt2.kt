@@ -15,6 +15,9 @@ fun main() {
     var instructionNumber = 0
     var coordinates: Pair<Int,Int>
 
+     /* move santa and robo-santa every other instruction and 
+       count the number of new houses visited */
+
     instructions.forEach() {
 
         if(instructionNumber % 2 == 0) {
