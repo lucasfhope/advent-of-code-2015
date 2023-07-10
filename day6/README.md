@@ -38,3 +38,7 @@ For example:
   - `toggle 0,0 through 999,999` would increase the total brightness by 2000000.
 
 Your puzzle answer was `17836115`.
+
+---
+
+[You can get the puzzle input here](input.txt).
