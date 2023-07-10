@@ -12,11 +12,11 @@ fun main() {
 
 	/* Part 1 */
 
-    var inputStream: InputStream = File("input.txt").inputStream()
+	var inputStream: InputStream = File("input.txt").inputStream()
 
-    inputStream.bufferedReader().forEachLine { cmd ->
+    	inputStream.bufferedReader().forEachLine { cmd ->
 		parseCmd(cmd)
-    }
+    	}
 	
 	var a_signal: Int? = null
 
