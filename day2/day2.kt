@@ -9,6 +9,9 @@ fun main() {
 
     var wrapping_paper_total = 0
     var ribbon_total = 0
+
+    /* calculates the number of wrapping paper and 
+       ribbon needed for each box and counts the total */
     
     lineList.forEach{
         val length_width_height = it.split("x")
