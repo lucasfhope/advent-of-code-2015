@@ -39,3 +39,7 @@ For example:
 How many strings are nice under these new rules?
 
 Your puzzle answer was `53`.
+
+---
+
+You can [get the puzzle input here](input.txt).
