@@ -109,7 +109,7 @@ fun executeCmd(recieving_wire: String, inputs: List<String>) {
         wire_inputs[recieving_wire] = inputs
 
     else
-	    calculateWireSignal(recieving_wire, inputs)
+	calculateWireSignal(recieving_wire, inputs)
 		
 }
 
@@ -153,8 +153,7 @@ fun calculateWireSignal(recieving_wire: String, inputs: List<String>) {
             input_values.add(input_value)
         }
     }
-
-	BitwiseOperation.fromOperation(operation).calculate(recieving_wire, input_values)
+    BitwiseOperation.fromOperation(operation).calculate(recieving_wire, input_values)
 }
 
 
