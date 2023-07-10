@@ -11,6 +11,9 @@ fun main() {
     var instruction_number = 0
     var basement_enetered = false
 
+    /* changes the floor number based on the instruction 
+       and checks for the first time the basement is enetered */
+
     for(instruction in instructions) {
         
         instruction_number++
