@@ -19,6 +19,10 @@ fun main() {
     println("Part 2: There are $part2NiceCount nice strings.")
 }
 
+
+/* returns if the input string is considered
+   nice based on the original rules decribed */
+   
 fun isStringNicePart1(input: String): Boolean {
     
     var numVowels = 0
@@ -52,6 +56,10 @@ fun isStringNicePart1(input: String): Boolean {
      
     return false
 }
+
+
+/* returns if the input string is considered
+   nice based on the rules decribed in part 2 */
 
 fun isStringNicePart2(input: String): Boolean {
 
