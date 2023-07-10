@@ -48,7 +48,7 @@ fun executeLightGridCommand(lightGrid: Array<Array<Boolean>>, input: String) {
 
 
 /* createLightGrid() returns a turned 
-   off lightGrid of dimensions specified  */ 
+   off lightGrid of dimensions specified */ 
 
 fun createLightGrid(x: Int, y: Int): Array<Array<Boolean>> {
     return Array(x) { Array(y) {false} }

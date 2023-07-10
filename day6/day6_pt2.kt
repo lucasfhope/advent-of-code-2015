@@ -15,6 +15,10 @@ fun main() {
     println("After following Santa's instructions, the total brightness of the lights was $totalBrightness.")   /* 17836115 */
 }
 
+
+/* executeLightGridCommand() parses the cmd read
+   from input.txt so the lightGrid can be updated  */
+
 fun executeLightGridCommand(lightGrid: Array<Array<Int>> , input: String) {
     
     val input_split = input.split(" ")
@@ -38,9 +42,16 @@ fun executeLightGridCommand(lightGrid: Array<Array<Int>> , input: String) {
     changeLightGridBrightness(lightGrid, start_indices[0].toInt(), start_indices[1].toInt(), end_indices[0].toInt(), end_indices[1].toInt(), brightness)
 }
 
+
+/* createLightGrid() returns a turned
+   off lightGrid of dimensions specified */
+
 fun createLightGrid(x: Int, y: Int): Array<Array<Int>> {
     return Array(x) { Array(y) { 0 } }
 }
+
+/* changeLightGridBrightness() updates a range of lights
+   in the lightGrid by a brightness of -1, 1, or 2 */
 
 fun changeLightGridBrightness(lightGrid: Array<Array<Int>>, x_start: Int, y_start: Int, x_end: Int, y_end: Int, brightness: Int) {
     for(i in x_start .. x_end)
@@ -50,6 +61,9 @@ fun changeLightGridBrightness(lightGrid: Array<Array<Int>>, x_start: Int, y_star
                 lightGrid[i][j] = 0
         }
 }
+
+/* countTotalBrightness() returns the
+   total brightness of the lightGrid */
 
 fun countTotalBrightness(lightGrid: Array<Array<Int>>): Int {
     var count = 0
