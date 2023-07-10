@@ -17,6 +17,6 @@ Now find one that starts with six zeroes.
 
 Your puzzle answer was `3938038`.
 
-----------------------------------
+---
 
-Your puzzle input was `ckczppom`.
+The puzzle input was `ckczppom`.
