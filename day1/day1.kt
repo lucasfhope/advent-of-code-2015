@@ -12,7 +12,7 @@ fun main() {
     var basement_enetered = false
 
     /* changes the floor number based on the instruction 
-       and checks for the first time the basement is enetered */
+       and checks for the first time the basement is entered */
 
     for(instruction in instructions) {
         
@@ -25,10 +25,10 @@ fun main() {
         }
 
         if(floor == -1 && !basement_enetered) {
-            println("Basement first enetered after instruction $instruction_number")  // 1797
+            println("Basement first enetered after instruction $instruction_number") 
             basement_enetered = true
         } 
     }
 
-    println("Santa finished on floor $floor")  // 280
+    println("Santa finished on floor $floor")
 }
