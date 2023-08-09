@@ -10,8 +10,8 @@ fun main() {
     var wrapping_paper_total = 0
     var ribbon_total = 0
 
-    /* calculates the number of wrapping paper and 
-       ribbon needed for each box and counts the total */
+    /* calculates the amount of wrapping paper and
+       ribbon needed in feet for each box and counts the total */
     
     lineList.forEach{
         val length_width_height = it.split("x")
@@ -33,6 +33,6 @@ fun main() {
         ribbon_total += (l*w*h) + (2*l + 2*w + 2*h) - 2*maxOf(l, maxOf(w,h))
     }
 
-    println("The elves should order $wrapping_paper_total feet of wrapping paper.")    /* 1588178 */
-    println("The elves should order $ribbon_total feet of ribbon.")                    /* 3783758 */
+    println("The elves should order $wrapping_paper_total feet of wrapping paper.")
+    println("The elves should order $ribbon_total feet of ribbon.")                   
 }
