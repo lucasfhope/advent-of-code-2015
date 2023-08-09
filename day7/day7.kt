@@ -39,7 +39,7 @@ fun main() {
 		println("No signal found in wire a.")
 		return
 	} else {
-		println("A signal of $a_signal was found in wire a.")  /* 46065 */
+		println("A signal of $a_signal was found in wire a.")
 	}
 
 	/* Part 2 */
@@ -60,7 +60,7 @@ fun main() {
 
 	while(new_a_signal == null) {
 		if(wire_inputs.size == 0) {
-			System.err.println("Error: No inputs remain to calculate the signal in the new wire a.")  /* 14134 */
+			System.err.println("Error: No inputs remain to calculate the signal in the new wire a.")
 			break
 		}
 		for((recieving_wire, input) in wire_inputs) {
@@ -81,36 +81,26 @@ fun main() {
 	}
 }
 
-
 /* parseCmd() parses each line of input.txt
    into the inputs and recieving_wire */
 
 fun parseCmd(cmd: String) {
-
     val wire_sides = cmd.split(" -> ")
     if(wire_sides.size != 2) {
         System.err.println("Error: Unable to parse command.")
         return
     }
-
     val recieving_wire = wire_sides[1]
     val inputs = wire_sides[0].split(" ")
-
     executeCmd(recieving_wire, inputs)
 }
-
 
 /* executeCmd() calculates a wire signal if possible.
    If not add to the wire_input map for later calculation */
 
 fun executeCmd(recieving_wire: String, inputs: List<String>) {
-
-    if (!inputsHaveSignal(inputs))
-        wire_inputs[recieving_wire] = inputs
-
-    else
-	calculateWireSignal(recieving_wire, inputs)
-		
+    if (!inputsHaveSignal(inputs)) wire_inputs[recieving_wire] = inputs
+    else calculateWireSignal(recieving_wire, inputs)
 }
 
 /* inputsHaveSignal() checks if all the input wires have
@@ -124,15 +114,12 @@ fun inputsHaveSignal(inputs: List<String>): Boolean {
 	return true
 }
 
-
 /* calculateWireSignal() calculates the signal in the wire after
    finding the bitwise operation used and the signal input values */
 
 fun calculateWireSignal(recieving_wire: String, inputs: List<String>) {
-
     var operation: Operation? = Operation.NONE
     val input_values = mutableListOf<Int>()
-
     for(input in inputs) {
         if(input[0].isUpperCase()) {
             operation = Operation.fromInput(input)
@@ -175,13 +162,11 @@ enum class Operation {
 	}
 }
 
-
 /* BitwiseOperation matches to the Operation enums. Each matched enum holds a calculate function
    to make calculations based on the operation. The calculated value is saved in wire_signals and the
    recieving_wire is added to input_wires_remove to be removed from input_wires in the calling main function */
 
 sealed class BitwiseOperation {
-	
 	companion object {
 		fun fromOperation(operation: Operation?): BitwiseOperation {
 			return when (operation) {
