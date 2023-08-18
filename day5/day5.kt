@@ -74,6 +74,6 @@ fun isStringNicePart2(input: String): Boolean {
         if(repeatDoubleFlag && splitLettersFlag) {
             return true
         }
-    }
+    } 
     return false
 }
