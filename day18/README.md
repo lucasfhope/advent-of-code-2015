@@ -130,6 +130,6 @@ In your grid of 100x100 lights, given your initial configuration, but with the f
 
 Your puzzle answer was `1006`.
 
-__
+___
 
 You can [get the puzzle input here](input.txt).
