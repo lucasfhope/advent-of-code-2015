@@ -4,7 +4,7 @@ Space on the sleigh is limited this year, and so Santa will be bringing his list
 
 It is common in many programming languages to provide a way to escape special characters in strings. For example, C, JavaScript, Perl, Python, and even PHP handle special characters in very similar ways.
 
-However, it is important to realize the difference between the number of characters __in the code representation of the string literal__ and the number of characters in the __in-memory string itself__.
+However, it is important to realize the difference between the number of characters __in the code representation of the string literal__ and the number of characters __in the in-memory string itself__.
 
 For example:
 
