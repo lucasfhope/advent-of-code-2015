@@ -39,5 +39,5 @@ Your puzzle answer was `804`.
 
 ___
 
-You can [get the puzzle input here](input.txt)
+You can [get the puzzle input here](input.txt).
 

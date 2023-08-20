@@ -32,4 +32,4 @@ Your puzzle answer was `65402`.
 
 ___
 
-You can [get the puzzle input here](input.txt)
+You can [get the puzzle input here](input.txt).
