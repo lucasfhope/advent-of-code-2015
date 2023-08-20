@@ -32,4 +32,4 @@ Your puzzle answer was `vzcaabcc`.
 
 ___
 
-Your puzzle input was `vzbxkghb`.
+The puzzle input was `vzbxkghb`.

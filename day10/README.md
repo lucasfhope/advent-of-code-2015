@@ -22,7 +22,7 @@ Neat, right? You might also enjoy hearing John Conway talking about this sequenc
 
 Now, starting again with the digits in your puzzle input, apply this process __50__ times. What is __the length of the new result__?
 
-Your puzzle answer was `5103798`.
+The puzzle answer was `5103798`.
 
 ___
 
