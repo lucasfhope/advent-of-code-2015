@@ -30,5 +30,5 @@ Your puzzle answer was `2631`.
 
 ---
 
-You can [get your puzzle input here](input.txt).
+You can [get the puzzle input here](input.txt).
 
