@@ -36,3 +36,8 @@ For example, given the distances above, the longest route would be `982` via (fo
 What is the distance of the longest route?
 
 Your puzzle answer was `804`.
+
+___
+
+You can [get the puzzle input here](input.txt)
+
