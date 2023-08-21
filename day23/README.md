@@ -22,7 +22,7 @@ For example, this program sets `a` to `2`, because the `jio` instruction causes 
     tpl a
     inc a
 
-What is the __value in register__ __ `b` __ when the program in your puzzle input is finished executing?
+What is the __value in register__ `b` when the program in your puzzle input is finished executing?
 
 Your puzzle answer was `184`.
 
