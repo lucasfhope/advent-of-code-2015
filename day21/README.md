@@ -1,4 +1,4 @@
---- Day 21: RPG Simulator 20XX ---
+### --- Day 21: RPG Simulator 20XX ---
 
 Little Henry Case got a new video game for Christmas. It's an RPG, and he's stuck on a boss. He needs to know what equipment to buy at the shop. He hands you the controller.
 
@@ -36,13 +36,13 @@ You must buy exactly one weapon; no dual-wielding. Armor is optional, but you ca
 
 For example, suppose you have `8` hit points, `5` damage, and `5` armor, and that the boss has `12` hit points, `7` damage, and `2` armor:
 
-- The player deals `5-2 = 3` damage; the boss goes down to `9` hit points.
-- The boss deals `7-5 = 2` damage; the player goes down to `6` hit points.
-- The player deals `5-2 = 3` damage; the boss goes down to `6` hit points.
-- The boss deals `7-5 = 2` damage; the player goes down to `4` hit points.
-- The player deals `5-2 = 3` damage; the boss goes down to `3` hit points.
-- The boss deals `7-5 = 2` damage; the player goes down to `2` hit points.
-- The player deals `5-2 = 3` damage; the boss goes down to `0` hit points.
+- The player deals `5-2 = 3` damage; the boss goes down to 9 hit points.
+- The boss deals `7-5 = 2` damage; the player goes down to 6 hit points.
+- The player deals `5-2 = 3` damage; the boss goes down to 6 hit points.
+- The boss deals `7-5 = 2` damage; the player goes down to 4 hit points.
+- The player deals `5-2 = 3` damage; the boss goes down to 3 hit points.
+- The boss deals `7-5 = 2` damage; the player goes down to 2 hit points.
+- The player deals `5-2 = 3` damage; the boss goes down to 0 hit points.
 
 In this scenario, the player wins! (Barely.)
 
@@ -50,7 +50,7 @@ You have __100 hit points__. The boss's actual stats are in your puzzle input. W
 
 Your puzzle answer was `121`.
 
---- Part Two ---
+### --- Part Two ---
 
 Turns out the shopkeeper is working with the boss, and can persuade you to buy whatever items he wants. The other rules still apply, and he still only has one of each item.
 
