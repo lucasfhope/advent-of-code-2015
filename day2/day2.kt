@@ -1,21 +1,16 @@
 import java.io.File
 import java.io.InputStream
 
-fun main() { 
-
+fun main() {
     val inputStream: InputStream = File("input.txt").inputStream()
     val lineList = mutableListOf<String>()
     inputStream.bufferedReader().forEachLine { lineList.add(it) } 
 
     var wrapping_paper_total = 0
     var ribbon_total = 0
-
-    /* calculates the amount of wrapping paper and
-       ribbon needed in feet for each box and counts the total */
     
-    lineList.forEach{
+    lineList.forEach {
         val length_width_height = it.split("x")
-        
         if(length_width_height.count() != 3) {
             System.err.println("Parsing Error: Unable to parse dimension $it.")
             return
@@ -24,7 +19,6 @@ fun main() {
         val l = length_width_height[0].toInt()
         val w = length_width_height[1].toInt()
         val h = length_width_height[2].toInt()
-
         val lw = l*w
         val wh = w*h
         val hl = h*l
@@ -33,6 +27,6 @@ fun main() {
         ribbon_total += (l*w*h) + (2*l + 2*w + 2*h) - 2*maxOf(l, maxOf(w,h))
     }
 
-    println("The elves should order $wrapping_paper_total feet of wrapping paper.")
+    println("The elves should order $wrapping_paper_total square feet of wrapping paper.")
     println("The elves should order $ribbon_total feet of ribbon.")                   
 }
