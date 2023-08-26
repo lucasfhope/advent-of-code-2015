@@ -19,9 +19,7 @@ fun main() {
     println("Part 2: There are $part2NiceCount nice strings.")
 }
 
-/* returns true if the input string is considered
-   nice based on the original rules decribed */
-   
+
 fun isStringNicePart1(input: String): Boolean {
 	val vowels = listOf('a','e','i','o','u')
 	val prohibitedDoubles = listOf("ab","cd","pq","xy")
@@ -30,26 +28,15 @@ fun isStringNicePart1(input: String): Boolean {
     var previousChar: Char = Char(0)
 
     input.forEach { char ->
-        if(char in vowels) {
-            numVowels++
-        }
-        if(char == previousChar) {
-            doubleLetterFlag = true
-        }
-        if(String(charArrayOf(previousChar,char)) in prohibitedDoubles) {
-            return false
-        }
+        if(char in vowels) numVowels++
+        if(char == previousChar) doubleLetterFlag = true
+        if(String(charArrayOf(previousChar,char)) in prohibitedDoubles) return false
         previousChar = char
     }
 
-    if(numVowels >= 3 && doubleLetterFlag) {
-        return true
-    }
-    return false
+	return numVowels >= 3 && doubleLetterFlag
 }
 
-/* returns true if the input string is considered
-   nice based on the rules decribed in part 2 */
 
 fun isStringNicePart2(input: String): Boolean {
     var repeatDoubleFlag = false
@@ -59,21 +46,19 @@ fun isStringNicePart2(input: String): Boolean {
 
     input.forEach { char ->
         if(last3.length == 3) {
-            last3 = last3.substring(1,3)
-        }
+			last3 = last3.substring(1,3)
+		}
         last3 += char
+
         if(last3.length == 3) {
-            if(last3.substring(1,3) in previousDoubles) {
-                repeatDoubleFlag = true
-            }
-            if(last3.substring(0,1).equals(last3.substring(2,3))) {
-                splitLettersFlag = true
-            }
+            if(last3.substring(1,3) in previousDoubles) repeatDoubleFlag = true
+            if(last3.substring(0,1).equals(last3.substring(2,3))) splitLettersFlag = true
             previousDoubles.add(last3.substring(0,2))
         }
+
         if(repeatDoubleFlag && splitLettersFlag) {
-            return true
-        }
+			return true
+		}
     } 
     return false
 }
