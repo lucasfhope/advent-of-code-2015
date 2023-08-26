@@ -3,8 +3,8 @@ import java.io.File
 import java.io.InputStream
 
 val location_graph = Graph()
-var shortest_path = Int.MAX_VALUE
-var longest_path = Int.MIN_VALUE
+var shortest_path_distance = Int.MAX_VALUE
+var longest_path_distance = Int.MIN_VALUE
 
 fun main() {
     val inputStream: InputStream = File("input.txt").inputStream()
@@ -14,12 +14,9 @@ fun main() {
     for(i in 0 until location_graph.locations.size) {
         findShortestAndLongestPath(location_graph.locations[i])
     }
-    println("The shortest path is $shortest_path.")
-    println("The longest path is $longest_path.")
+    println("The shortest path is $shortest_path_distance.")
+    println("The longest path is $longest_path_distance.")
 }
-
-/* parses input string and adds locations and
-   the distance between them in the graph */
 
 fun addToGraph(input: String) {
     val parsedInput= input.split(" ")
@@ -69,14 +66,9 @@ fun checkDistance(path: List<Location>) {
     for(i in 0 until path.size-1) {
         distance += location_graph.getDistance(path[i],path[i+1])
     }
-    if(shortest_path > distance) {
-        shortest_path = distance
-    }
-    if(longest_path < distance) {
-        longest_path = distance
-    }
+    if(shortest_path_distance > distance) shortest_path_distance = distance
+    if(longest_path_distance < distance) longest_path_distance = distance
 }
-
 
 
 data class Location (
@@ -113,7 +105,6 @@ class Graph {
     fun getDistance(source: Location, destination: Location): Int {
         return edges.firstOrNull { it.source == source && it.destination == destination }?.distance ?: -1
     }
-
 }
 
 
