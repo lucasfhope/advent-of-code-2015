@@ -15,8 +15,8 @@ fun main() {
         if(isStringNicePart2(str)) part2NiceCount++
     }
 
-    println("Part 1: There are $part1NiceCount nice strings.")
-    println("Part 2: There are $part2NiceCount nice strings.")
+    println("Part 1: $part1NiceCount nice strings.")
+    println("Part 2: $part2NiceCount nice strings.")
 }
 
 

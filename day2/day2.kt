@@ -27,6 +27,6 @@ fun main() {
         ribbon_total += (l*w*h) + (2*l + 2*w + 2*h) - 2*maxOf(l, maxOf(w,h))
     }
 
-    println("The elves should order $wrapping_paper_total square feet of wrapping paper.")
-    println("The elves should order $ribbon_total feet of ribbon.")                   
+    println("$wrapping_paper_total square feet of wrapping paper.")
+    println("$ribbon_total feet of ribbon.")                   
 }
