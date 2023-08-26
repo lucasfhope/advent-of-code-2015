@@ -24,13 +24,7 @@ fun main() {
     println("The difference between the number of newly encoded and total characters is $difference_pt2.")
 }
 
-/* returns the total number of
-   characters in the input string */
-
 fun countTotalCharacters(input: String): Int = input.length
-
-/* returns the number of in memeory characters in the input string after
-   replacing escape sequences, escape quotes, and hexidecimal characters */
 
 fun countInMemoryCharacters(input: String): Int {
     // remove outside quotes
@@ -43,9 +37,6 @@ fun countInMemoryCharacters(input: String): Int {
     replaced_input = hexadecimal_pattern.replace(replaced_input, "_")
     return countTotalCharacters(replaced_input)
 }
-
-/* returns the number of in newly encoded
-   characters in the input string if it was encoded */
 
 fun countNewEncodingCharacters(input: String): Int {
     // add placeholders for encoded outside quotes
