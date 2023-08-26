@@ -14,12 +14,10 @@ fun main() {
     val lightCountPart1 = countTotalBrightness(lightGridPart1)
 	val lightCountPart2 = countTotalBrightness(lightGridPart2)
 
-    println("After following Santa's instructions, there were $lightCountPart1 lights left on.")
-	println("After following Santa's instructions, there were $lightCountPart2 lights left on.")
+    println("$lightCountPart1 lights left on.")
+	println("$lightCountPart2 lights left on.")
 }
 
-/* executeLightGridCommand() parses the cmd read 
-   from input.txt so the lightGrid can be updated  */
 
 fun executeLightGridCommand(lightGrid: Array<Array<Int>>, input: String, isPart2: Boolean) {
     val input_split = input.split(" ")
@@ -44,26 +42,6 @@ fun executeLightGridCommand(lightGrid: Array<Array<Int>>, input: String, isPart2
 	changeLightGridBrightness(lightGrid, start_indices[0].toInt(), start_indices[1].toInt(), end_indices[0].toInt(), end_indices[1].toInt(), brightness, toggle, isPart2)
 }
 
-/* createLightGrid() returns a turned 
-   off lightGrid of dimensions specified */
-
-fun createLightGrid(x: Int, y: Int): Array<Array<Int>> {
-	return Array(x) { Array(y) { 0 } }
-}
-
-/* countTotalBrightness() returns the
-   total brightness of the lightGrid in part 2
-   or the number of illuminated lights in part 1 */
-
-fun countTotalBrightness(lightGrid: Array<Array<Int>>): Int {
-	var count = 0
-	for(light in lightGrid.flatten()) count += light
-	return count
-}
-
-/* changeLightGridBrightness() updates a range of lights in the lightGrid by a
-   brightness of -1, 1, or 2 for part 2 and will turn light on (1) or off (0)
-   or toggle whether the light is on or off for part 1 */
 
 fun changeLightGridBrightness(lightGrid: Array<Array<Int>>, x_start: Int, y_start: Int, x_end: Int, y_end: Int, brightness: Int, toggle: Boolean, isPart2: Boolean) {
 	for(i in x_start .. x_end) {
@@ -81,4 +59,16 @@ fun changeLightGridBrightness(lightGrid: Array<Array<Int>>, x_start: Int, y_star
 		}
 	}
 }
+
+fun createLightGrid(x: Int, y: Int): Array<Array<Int>> {
+	return Array(x) { Array(y) { 0 } }
+}
+
+fun countTotalBrightness(lightGrid: Array<Array<Int>>): Int {
+	var count = 0
+	for(light in lightGrid.flatten()) count += light
+	return count
+}
+
+
 
