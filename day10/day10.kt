@@ -10,14 +10,12 @@ fun main(args: Array<String>) {
 
     var sequence: String = args[0]
     var iterations: Int = args[1].toInt()
-
     while(iterations > 0) {
         sequence = lookAndSay(sequence)
         iterations--
     }
 
-    println("The look and say puzzle result length of ${args[0]} after ${args[1]} iterations is ${sequence.length}.")  // 40: 360154, 50:
-
+    println("The look and say puzzle result length is ${sequence.length}.")
 }
 
 fun lookAndSay(input: String): String {

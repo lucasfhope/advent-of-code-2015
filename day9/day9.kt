@@ -14,8 +14,8 @@ fun main() {
     for(i in 0 until location_graph.locations.size) {
         findShortestAndLongestPath(location_graph.locations[i])
     }
-    println("The shortest path is $shortest_path_distance.")
-    println("The longest path is $longest_path_distance.")
+    println("The shortest distance is $shortest_path_distance.")
+    println("The longest distance is $longest_path_distance.")
 }
 
 fun addToGraph(input: String) {
