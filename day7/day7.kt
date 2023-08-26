@@ -3,23 +3,19 @@ import java.io.InputStream
 
 val wire_signals = mutableMapOf<String,Int>()           // calculated wire signals
 val wire_inputs = mutableMapOf<String,List<String>>()   // wire instructions that cannot be calculated into a signal
-val wire_inputs_remove = mutableListOf<String> ()       // to be from wire_inputs after added to wire signal
+val wire_inputs_remove = mutableListOf<String> ()       // to be removed from wire_inputs after added to wire_signals
 
 const val A = "a"
 const val B = "b"
 
 fun main() {
 
-	/* Part 1 */
-
 	var inputStream: InputStream = File("input.txt").inputStream()
-
-    	inputStream.bufferedReader().forEachLine { cmd ->
+	inputStream.bufferedReader().forEachLine { cmd ->
 		parseCmd(cmd)
-    	}
+	}
 	
 	var a_signal: Int? = null
-
 	while(a_signal == null) {
 		if(wire_inputs.size == 0) {
 			System.err.println("Error: No inputs remain to calculate the signal in wire a.")
@@ -36,20 +32,17 @@ fun main() {
 	}
 
 	if(a_signal == null) {
-		println("No signal found in wire a.")
+		println("Part 1: No signal found in wire a.")
 		return
 	} else {
-		println("A signal of $a_signal was found in wire a.")
+		println("Part 1: $a_signal in wire a.")
 	}
-
-	/* Part 2 */
 
 	wire_signals.clear()
 	wire_signals[B] = a_signal
 	wire_inputs.clear()
 
 	inputStream = File("input.txt").inputStream()
-
 	inputStream.bufferedReader().forEachLine { cmd ->
 		if(!(cmd.split(" -> ")[1] == B)) {
 			parseCmd(cmd)
@@ -57,7 +50,6 @@ fun main() {
 	}
 
 	var new_a_signal: Int? = null
-
 	while(new_a_signal == null) {
 		if(wire_inputs.size == 0) {
 			System.err.println("Error: No inputs remain to calculate the signal in the new wire a.")
@@ -74,15 +66,13 @@ fun main() {
 	}
 
 	if(new_a_signal == null) {
-		println("No signal found in the new wire a.")
+		println("Part 2: No signal found in the new wire a.")
 		return
 	} else {
-		println("A signal of $new_a_signal was found in the new wire a.")
+		println("Part 2: $new_a_signal in new wire a.")
 	}
 }
 
-/* parseCmd() parses each line of input.txt
-   into the inputs and recieving_wire */
 
 fun parseCmd(cmd: String) {
     val wire_sides = cmd.split(" -> ")
@@ -95,16 +85,12 @@ fun parseCmd(cmd: String) {
     executeCmd(recieving_wire, inputs)
 }
 
-/* executeCmd() calculates a wire signal if possible.
-   If not add to the wire_input map for later calculation */
 
 fun executeCmd(recieving_wire: String, inputs: List<String>) {
     if (!inputsHaveSignal(inputs)) wire_inputs[recieving_wire] = inputs
     else calculateWireSignal(recieving_wire, inputs)
 }
 
-/* inputsHaveSignal() checks if all the input wires have
-   a signal so the recieving_wire signal can be calculated */
 
 fun inputsHaveSignal(inputs: List<String>): Boolean {
 	for(input in inputs)
@@ -114,8 +100,6 @@ fun inputsHaveSignal(inputs: List<String>): Boolean {
 	return true
 }
 
-/* calculateWireSignal() calculates the signal in the wire after
-   finding the bitwise operation used and the signal input values */
 
 fun calculateWireSignal(recieving_wire: String, inputs: List<String>) {
     var operation: Operation? = Operation.NONE
@@ -144,9 +128,6 @@ fun calculateWireSignal(recieving_wire: String, inputs: List<String>) {
 }
 
 
-/* Operation holds enums that can be matched to
-   based on the parsed bitwise_operation in the input string */
-
 enum class Operation {
 	AND,
 	OR,
@@ -162,9 +143,6 @@ enum class Operation {
 	}
 }
 
-/* BitwiseOperation matches to the Operation enums. Each matched enum holds a calculate function
-   to make calculations based on the operation. The calculated value is saved in wire_signals and the
-   recieving_wire is added to input_wires_remove to be removed from input_wires in the calling main function */
 
 sealed class BitwiseOperation {
 	companion object {
