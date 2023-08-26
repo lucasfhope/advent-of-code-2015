@@ -28,7 +28,7 @@ fun visitHousesWithOnlySanta(instructions: String) {
 		}
 	}
 
-	println("$houses_with_presents houses recieved presents from Santa.")
+	println("Part 1: $houses_with_presents houses recieved presents.")
 }
 
 fun visitHousesWithSantaAndRobot(instructions: String) {
@@ -60,5 +60,5 @@ fun visitHousesWithSantaAndRobot(instructions: String) {
 		instructionNumber++
 	}
 
-	println("$houses_with_presents houses recieved presents from Santa and Robo-Santa.")
+	println("Part 2: $houses_with_presents houses recieved presents.")
 }
