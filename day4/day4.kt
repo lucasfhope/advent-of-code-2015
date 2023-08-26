@@ -7,41 +7,32 @@ fun main(args: Array<String>) {
         System.err.println("Secret key expected as command line argument.")
         return
     }
-
-    /* loops until the secret key appended to a number
-	   has an MD5 Hash with 5 leading zeros (part 1) */
     
     val secretKey: String = args[0]
     var number = 1
-    
     while(true) {
-        val inputString = secretKey + number.toString()
-        val MD5Hash = calculateMD5(inputString)
+        val md5Input = secretKey + number.toString()
+        val MD5Hash = calculateMD5(md5Input)
         if(hasLeadingZeros(MD5Hash,5)) {
             break
         }
         number++
     }
 
-    println("The lowest positive number (appended to the secret key) to produce a MD5 hash with at least 5 leading zeros is $number.")
-
-    /* loops until the secret key appended to a number
-	   has an MD5 Hash with 5 leading zeros (part 2) */
+    println("MD5 Input Part 1: $number$secretKey")
     
     while(true) {
-        val inputString = secretKey + number.toString()
-        val MD5Hash = calculateMD5(inputString)
+        val md5Input = secretKey + number.toString()
+        val MD5Hash = calculateMD5(md5Input)
         if(hasLeadingZeros(MD5Hash,6)) {
             break
         }
         number++
     }
 
-    println("The lowest positive number (appended to the secret key) to produce a MD5 hash with at least 6 leading zeros is $number.")
+    println("MD5 Input Part 2: $number$secretKey")
 }
 
-/* calculateMD5() returns the 
-   MD5 hash of the index string */
 
 fun calculateMD5(input: String): String {
     val md = MessageDigest.getInstance("MD5")
@@ -54,12 +45,10 @@ fun calculateMD5(input: String): String {
     return hashText
 }
 
-/* hasLeadingZeros() returns true if the input string 
-   has the inputted number of leading zeros */
 
-fun hasLeadingZeros(input: String, index: Int): Boolean {
-    val first5 = input.substring(0,index)
-    first5.forEach {
+fun hasLeadingZeros(input: String, neededLeadingNumbers: Int): Boolean {
+    val leadingNumbers = input.substring(0,neededLeadingNumbers)
+    leadingNumbers.forEach {
         if(!it.equals('0')) {
             return false
         }
