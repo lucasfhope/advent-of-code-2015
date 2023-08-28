@@ -4,7 +4,6 @@ import java.io.InputStream
 
 
 fun main() {
-
     val mfcsamAuntSue = AuntSue(0,3,7,2,3,0,0,5,3,2,1)
     val auntSues = mutableListOf<AuntSue>()
     val outdatedSueComparisonValues = mutableMapOf<Int,Int>()
@@ -12,7 +11,7 @@ fun main() {
 
     var inputStream: InputStream = File("input.txt").inputStream()
     inputStream.bufferedReader().forEachLine { mem ->
-        auntSues.add(auntSueFromMemory(mem))
+        auntSues.add(createAuntSueFromMemory(mem))
     }
 
     for(auntSue in auntSues) {
@@ -23,12 +22,12 @@ fun main() {
     val outdatedSue = outdatedSueComparisonValues.maxBy { it.value }
     val updatedSue = updatedSueComparisonValues.maxBy { it.value }
 
-    println(outdatedSue.key)
-    println(updatedSue.key)
+    println("Aunt Sue number ${outdatedSue.key}")
+    println("Aunt Sue number ${updatedSue.key}")
 
 }
 
-fun auntSueFromMemory(input: String): AuntSue {
+fun createAuntSueFromMemory(input: String): AuntSue {
     val splitInput = input.split(" ")
     val sueNumber = splitInput[1].replace(":","").toInt()
     return AuntSue(
@@ -56,7 +55,6 @@ fun getFieldValue(inputList: List<String>, field: String): Int? {
     return null
 }
 
-
 data class AuntSue(
     val sueNumber: Int,
     val children: Int?,
@@ -70,6 +68,7 @@ data class AuntSue(
     val cars: Int?,
     val perfumes: Int?
 ) {
+	/* compares by awarding a point if the values are the same */
     fun compareOutdated(sue: AuntSue): Int {
         var totalSame = 0
         if(this.children != null && sue.children != null && this.children == sue.children) totalSame++
@@ -84,6 +83,7 @@ data class AuntSue(
         if(this.perfumes != null && sue.perfumes != null && this.perfumes == sue.perfumes) totalSame++
         return totalSame
     }
+	/* compares by awarding a point, but updated for bad data in part 2 */
     fun compareUpdated(sue: AuntSue): Int {
         var total = 0
         if(this.children != null && sue.children != null && this.children == sue.children) total++
