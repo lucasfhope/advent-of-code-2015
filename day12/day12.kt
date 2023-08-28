@@ -11,8 +11,8 @@ fun main() {
     discludeRed = true
     val sumOfNumbersDiscludingRed = findJsonObjectValue(inputJson, inputJson.length)
 
-    println("The sum of numbers within the Json message is $sumOfNumbers.")
-    println("The sum of numbers discluding red within the Json message is $sumOfNumbersDiscludingRed.")
+    println("The sum of numbers is $sumOfNumbers.")
+    println("The sum of numbers discluding red is $sumOfNumbersDiscludingRed.")
 }
 
 /* value */
