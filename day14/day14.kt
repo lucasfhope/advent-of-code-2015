@@ -33,8 +33,8 @@ fun main(args: Array<String>) {
         if(reindeer.totalPoints > mostAccumulatedPoints) mostAccumulatedPoints = reindeer.totalPoints
     }
 
-    println(longestDistanceTraveled)
-    print(mostAccumulatedPoints)
+    println("Longest distance is $longestDistanceTraveled.")
+    print("Most accumulated points is $mostAccumulatedPoints.")
 
 }
 
@@ -67,9 +67,9 @@ class Reindeer(inputName: String, inputSpeed: Int, inputDuration: Int, inputRest
     private var nextRest = duration
     private var isFlying = true
 
-    var distanceTraveled = 0          // in km
-    var totalPoints = 0
-    var currentTime = 0               // in s
+    var distanceTraveled = 0          		  // in km
+    var totalPoints = 0				          // using Santa's point system
+    var currentTime = 0                       // in s
 
     fun incrementTime() {
         currentTime++
@@ -86,5 +86,4 @@ class Reindeer(inputName: String, inputSpeed: Int, inputDuration: Int, inputRest
             }
         }
     }
-
 }
