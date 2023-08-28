@@ -12,7 +12,7 @@ fun main() {
 
     val containerCombinations = combinations(containers, 150)
 
-    println(containerCombinations.size)
+    println("${containerCombinations.size} total combinations")
 
     val combinationWithMinimumContainers = containerCombinations.minByOrNull { it.size }
     val minimumContainersUsed = combinationWithMinimumContainers?.size
@@ -24,9 +24,11 @@ fun main() {
         }
     }
 
-    println(numCombinationsWithMinimumContainers)
-
+    println("$numCombinationsWithMinimumContainers total combinations using $minimumContainersUsed containers")
 }
+
+/* combinations() recursively generates combinations of
+   conatiners that fit the target value exactly */
 
 fun combinations(containers: MutableList<Int>, target: Int): List<List<Int>> {
     val result = mutableListOf<List<Int>>()
