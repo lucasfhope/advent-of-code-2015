@@ -2,8 +2,6 @@
 import java.io.File
 import java.nio.charset.Charset
 
-
-
 var discludeRed = false
 
 fun main() {
@@ -22,7 +20,7 @@ fun main() {
 fun findJsonObjectValue(input: String, length: Int): Int {
     var count = 0
     var i = 0
-    while(i < length) {  // len include }
+    while(i < length) {  		// length includes }
         if(input[i] == '{') {
             val len = findJsonObjectLength(input.substring(i + 1))
             count += findJsonObjectValue(input.substring(i + 1),len)
@@ -50,7 +48,7 @@ fun findJsonObjectValue(input: String, length: Int): Int {
 fun findJsonArrayValue(input: String, length: Int): Int {
     var count = 0
     var i = 0
-    while(i < length) {  // len include }
+    while(i < length) {  		// length includes }
         if(input[i] == '{') {
             val len = findJsonObjectLength(input.substring(i + 1))
             count += findJsonObjectValue(input.substring(i + 1),len)
@@ -75,7 +73,7 @@ fun findJsonArrayValue(input: String, length: Int): Int {
 fun findJsonStrValue(input: String, length: Int): String {
     var str = ""
     var i = 0
-    while(i < length-1) {  // to disclude the end quote
+    while(i < length-1) {  // discludes the end quote
         str += input[i]
         i++
     }
@@ -85,7 +83,7 @@ fun findJsonStrValue(input: String, length: Int): String {
 fun findJsonNumberValue(input: String, length: Int): Int {
     var num = ""
     var i = 0
-    while(i < length) {  // to disclude the end quote
+    while(i < length) {  // discludes the end quote
         num += input[i]
         i++
     }
@@ -130,7 +128,7 @@ fun findJsonStrLength(input: String): Int {
     while(input[i] != '"') {
         i++
     }
-    return i + 1  // to inlcude the end quote
+    return i + 1  	// inlcudes the end quote
 }
 
 
