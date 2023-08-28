@@ -23,8 +23,8 @@ fun main() {
         cornersOnLightGrid = updateLightGridStatusCornersOn(cornersOnLightGrid)
     }
 
-    println(numberOfLightsOn(lightGrid))
-    println(numberOfLightsOn(cornersOnLightGrid))
+    println("${numberOfLightsOn(lightGrid)} lights left on")
+    println("${numberOfLightsOn(cornersOnLightGrid)} lights left on when corner lights stay on")
 }
 
 fun updateLightGridStatus(lightGrid: Array<Array<Char>>): Array<Array<Char>> {
@@ -102,6 +102,7 @@ fun numberOfLightsOn(lightGrid: Array<Array<Char>>): Int {
     return lightsOn
 }
 
+// for testing purposes
 fun printLightGrid(lightGrid: Array<Array<Char>>) {
     for(i in 0 until lightGrid.size) {
         for(j in 0 until lightGrid[0].size) {
