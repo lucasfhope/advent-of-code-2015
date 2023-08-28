@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
         password = incrementPassword(password)
     }
 
-    println("Santa's next password should be $password.")
+    println("The new password is $password.")
 
     password = incrementPassword(password)
     while(true) {
@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
         password = incrementPassword(password)
     }
 
-    println("If that expires, the password after would be $password.")
+    println("The new password is $password.")
 
 }
 
