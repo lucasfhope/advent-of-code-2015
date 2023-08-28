@@ -2,7 +2,6 @@ import java.io.File
 import java.io.InputStream
 
 fun main() {
-
     val bossStats = mutableListOf<Int>()
     var inputStream: InputStream = File("input.txt").inputStream()
     inputStream.bufferedReader().forEachLine { str ->
@@ -13,10 +12,9 @@ fun main() {
     val losingPlayers = findLosingPlayers(boss)
     val shopItems = getShopItems()
 
-    println(costOfCheapestWinner(winningPlayers,shopItems))
-    println(costOfMostExpensiveLoser(losingPlayers,shopItems))
+    println("${costOfCheapestWinner(winningPlayers,shopItems)} gold is the least that can be spend to win.")
+    println("${costOfMostExpensiveLoser(losingPlayers,shopItems)} gold is the most that can be spent to still lose.")
 }
-
 
 class Player(hp: Int, dmg: Int, arm: Int) {
     val hitPoints = hp
@@ -87,10 +85,9 @@ fun costOfMostExpensiveLoser(losingPlayers: List<Player>, shopItems: List<Item>)
     return highestCost
 }
 
-
-sealed class Item (
-) {
-    data class Weapon(
+sealed class Item() {
+    
+	data class Weapon(
         val name: String,
         val cost: Int,
         val damage: Int
