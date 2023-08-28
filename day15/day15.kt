@@ -16,14 +16,11 @@ fun main() {
 
     val teaspoonsOfIngredients = 100
     val numberOfIngredients = kitchenIngredients.size
-
     generateIngredientCombinations(teaspoonsOfIngredients, numberOfIngredients)
-    println(highestCookieScore)
-    println(highestCookieScoreWith500Calories)
+
+    println("Highest cookie score: $highestCookieScore")
+    println("Highest cookies score (500 Cal): $highestCookieScoreWith500Calories")
 }
-
-
-
 
 fun generateIngredientCombinations(totalTeaspoons: Int, numberOfIngredients: Int) {
     val ingredients = IntArray(numberOfIngredients)
