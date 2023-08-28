@@ -2,7 +2,6 @@ import java.io.File
 import java.io.InputStream
 
 fun main() {
-
     val bossStats = mutableListOf<Int>()
     var inputStream: InputStream = File("input.txt").inputStream()
     inputStream.bufferedReader().forEachLine { str ->
@@ -11,15 +10,9 @@ fun main() {
     val boss = Boss(bossStats[0], bossStats[1])
     val wizard = Wizard()
 
-    println(manaUsedDuringBossBattle(wizard.copy(),boss.copy(),false))
-    println(manaUsedDuringBossBattle(wizard.copy(),boss.copy(),true))
-
+    println("Minimum mana used: ${manaUsedDuringBossBattle(wizard.copy(),boss.copy(),false)}")
+    println("Minimum mana used in hard mode ${manaUsedDuringBossBattle(wizard.copy(),boss.copy(),true)}")
 }
-
-
-
-
-
 
 fun manaUsedDuringBossBattle(wizard: Wizard, boss: Boss, hardMode: Boolean): Int  {
     var minimumManaUsed = Int.MAX_VALUE
