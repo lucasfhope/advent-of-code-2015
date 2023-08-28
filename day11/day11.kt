@@ -34,7 +34,7 @@ fun isValidPassword(password: String): Boolean {
             && hasTwoLetterPairs(password)
 }
 
-fun hasThreeLetterStraight(password: String): Boolean {
+fun hasThreeLettersStraight(password: String): Boolean {
     for(i in 0 until password.length-2)
         if(password[i+2] == password[i+1]+1 &&
             password[i+1] == password[i]+1) return true
