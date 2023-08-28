@@ -9,12 +9,10 @@ fun main(args: Array<String>) {
 
     val presentTarget = args[0].toInt()
 
-    /*val duration1 = measureTimeMillis { findHouseWithPresentsPart1(presentTarget) }
-    println("Time: ${duration1/1000.0} s")*/
-
+    val duration1 = measureTimeMillis { findHouseWithPresentsPart1(presentTarget) }
+    println("Time: ${duration1/1000.0} s")
     val duration2 = measureTimeMillis { findHouseWithPresentsPart2(presentTarget) }
     println("Time: ${duration2/1000.0} s")
-
 }
 
 fun findHouseWithPresentsPart1(presentTarget: Int) {
@@ -23,7 +21,7 @@ fun findHouseWithPresentsPart1(presentTarget: Int) {
         val elvesThatVisit = findElvesThatVisitPart1(houseNumber)
         val presentsRecieved = elvesThatVisit.fold(0) { total, elfNumber -> total + elfNumber * 10 }
         if(presentsRecieved >= presentTarget) {
-            println("House number $houseNumber")
+            println("Part 1: House number $houseNumber")
             return
         }
         houseNumber++
@@ -36,13 +34,12 @@ fun findHouseWithPresentsPart2(presentTarget: Int) {
         val elvesThatVisit = findElvesThatVisitPart2(houseNumber)
         val presentsRecieved = elvesThatVisit.fold(0) { total, elfNumber -> total + elfNumber * 11 }
         if (presentsRecieved >= presentTarget) {
-            println("House number $houseNumber")
+            println("Part 2: House number $houseNumber")
             return
         }
         houseNumber++
     }
 }
-
 
 fun findElvesThatVisitPart1(houseNumber: Int): List<Int> {
     val elfNumbers = mutableListOf<Int>()
