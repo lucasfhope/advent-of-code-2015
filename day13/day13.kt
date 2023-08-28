@@ -18,7 +18,7 @@ fun main() {
         if(arrangementHappinessValue > bestHappinessValue) bestHappinessValue = arrangementHappinessValue
     }
 
-    println(bestHappinessValue)
+    println("$bestHappinessValue total happiness without me")
 
     addMyself()
 
@@ -29,10 +29,8 @@ fun main() {
         if(arrangementHappinessValue > newBestHappinessValue) newBestHappinessValue = arrangementHappinessValue
     }
 
-    println(newBestHappinessValue)
+    println("newBestHappinessValue total happiness with me")
 }
-
-
 
 fun generateSeatingArrangements(inputPeople: List<Person>): List<List<Person>> {
     if(inputPeople.size <= 1) return listOf(inputPeople)
@@ -68,7 +66,6 @@ fun calculateTotalHappiness(arrangement: List<Person>): Int {
     return totalHappiness
 }
 
-
 fun createPerson(input: String) {
     val splitInput = input.split(" ")
     var person = people.find { it.name == splitInput[0] }
@@ -90,7 +87,6 @@ fun addMyself() {
     }
     people.add(me)
 }
-
 
 class Person(personName: String) {
     val name = personName
