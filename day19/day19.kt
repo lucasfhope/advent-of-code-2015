@@ -2,7 +2,6 @@ import java.io.File
 import java.io.InputStream
 
 fun main() {
-
     val moleculeReplacements = mutableMapOf<String,MutableList<String>>()
     val originalMolecule: String
     var molecule = ""
@@ -24,9 +23,9 @@ fun main() {
     originalMolecule = molecule
 
     var replacementMolecules = generateReplacementMolecules(originalMolecule, moleculeReplacements)
-    println(replacementMolecules.size)
-    val b = backtrackToE(originalMolecule,moleculeReplacements)
-    println(b)
+    println("${replacementMolecules.size} total replacement molecules")
+    val numSteps = backtrackToE(originalMolecule,moleculeReplacements)
+    println("$numSteps steps from e to $originalMolecule")
 }
 
 fun generateReplacementMolecules(originalMolecule: String, moleculeReplacements: Map<String,List<String>>): Set<String> {
@@ -50,11 +49,9 @@ fun generateReplacementMolecules(originalMolecule: String, moleculeReplacements:
     return replacementMolecules
 }
 
+// returns the number of steps taken from e to the molecule
 fun backtrackToE(medecineMolecule: String, moleculeReplacements: Map<String, List<String>>): Int {
-
     val listOfReplacements = listOfReplacements(moleculeReplacements)
-    println(listOfReplacements)
-
     var currentMolecule = medecineMolecule
     var stepsTaken = 0
 
@@ -71,7 +68,6 @@ fun backtrackToE(medecineMolecule: String, moleculeReplacements: Map<String, Lis
             }
         }
     }
-
     return stepsTaken
 }
 
